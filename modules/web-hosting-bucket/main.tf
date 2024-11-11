@@ -1,8 +1,14 @@
-resource "aws_s3_bucket" "web-hosting-bucket" {
-     bucket = "web-hosting-bucket-0875"
+resource "random_string" "" {
+  
+}
 
-     tags = {
-          Name = "web-hosting-bucket"
-          Environment = "Dev"
-     }
+resource "aws_s3_bucket" "web-hosting-bucket" {
+  bucket = "${var.bucket_prefix}-${}"
+
+  force_destroy = true
+
+  tags = {
+    Name        = "web-hosting-bucket"
+    Environment = "Dev"
+  }
 }
