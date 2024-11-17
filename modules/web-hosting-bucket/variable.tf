@@ -32,3 +32,9 @@ variable "html_source_dir" {
   description = "Directory containing the HTML source files"
   type        = string
 }
+
+variable "environment" {
+  description = "Environment name"
+  type        = string
+  default     = "production"
+}
