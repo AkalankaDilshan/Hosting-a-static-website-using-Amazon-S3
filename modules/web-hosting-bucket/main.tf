@@ -7,6 +7,7 @@ resource "aws_s3_bucket" "web_hosting_bucket" {
   bucket        = "${var.bucket_prefix}-${random_string.bucket_suffix.result}"
   force_destroy = true
 
+
   tags = {
     Name        = "web hosting bucket"
     Environment = var.environment
@@ -16,7 +17,6 @@ resource "aws_s3_bucket" "web_hosting_bucket" {
 
 resource "aws_s3_bucket_website_configuration" "web_hosting_bucket_config" {
   bucket = aws_s3_bucket.web_hosting_bucket.id
-
   index_document {
     suffix = var.index_document
   }
