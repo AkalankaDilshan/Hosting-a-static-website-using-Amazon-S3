@@ -13,7 +13,7 @@ variable "aws_region" {
 variable "environment" {
   description = "environment for development"
   type        = string
-  default     = "dev"
+  default     = "development"
 }
 
 variable "index_document" {
@@ -33,8 +33,3 @@ variable "html_source_dir" {
   type        = string
 }
 
-variable "environment" {
-  description = "Environment name"
-  type        = string
-  default     = "production"
-}
