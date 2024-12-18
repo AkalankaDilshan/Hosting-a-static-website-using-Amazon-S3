@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 
-module "S3_bucket_policy" {
-  source      = "./modules/iam-role"
-  bucket_name = module.aws_s3_bucket.bucket_name
-  bucket_arn  = module.aws_s3_bucket.bucket_arn
-}
+# module "S3_bucket_policy" {
+#   source      = "./modules/iam-role"
+#   bucket_name = module.aws_s3_bucket.bucket_name
+#   bucket_arn  = module.aws_s3_bucket.bucket_arn
+# }
 
 module "aws_s3_bucket" {
   source                = "./modules/web-hosting-bucket"
