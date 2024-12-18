@@ -1,7 +1,7 @@
 data "aws_iam_policy_document" "s3_policy" {
   statement {
     sid       = "PublicReadGetObject"
-    effect    = "allow"
+    effect    = "Allow"
     actions   = ["s3:GetObject"]
     resources = ["${var.bucket_arn}/*"]
 
@@ -14,6 +14,6 @@ data "aws_iam_policy_document" "s3_policy" {
 }
 
 resource "aws_s3_bucket_policy" "bucket_policy" {
-  bucket = var.bucket_name
+  bucket = var.bucket_id
   policy = data.aws_iam_policy_document.s3_policy.json
 }
