@@ -1,4 +1,4 @@
-output "bucket_name" {
+output "bucket_id" {
   value = aws_s3_bucket.web_hosting_bucket.id
 }
 
