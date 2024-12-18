@@ -4,7 +4,7 @@ terraform {
     organization = "ZeroCloud"
 
     workspaces {
-      name = "Build-an-Event-Driven-Media-Conversion-Pipeline"
+      name = "Hosting-a-static-website-using-Amazon-S3"
     }
   }
 
