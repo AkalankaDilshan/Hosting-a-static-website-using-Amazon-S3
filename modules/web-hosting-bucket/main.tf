@@ -54,6 +54,7 @@ resource "aws_s3_object" "index_page" {
   key          = var.index_document
   source       = var.index_html_source_dir
   content_type = "text/html"
+  depends_on   = [aws_s3_bucket.web_hosting_bucket]
 }
 
 resource "aws_s3_object" "error_page" {
@@ -61,5 +62,6 @@ resource "aws_s3_object" "error_page" {
   key          = var.error_document
   source       = var.error_html_source_dir
   content_type = "text/html"
+  depends_on   = [aws_s3_bucket.web_hosting_bucket]
 }
 
