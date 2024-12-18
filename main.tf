@@ -6,3 +6,8 @@ provider "aws" {
 # module "Iam_role" {
 #   source = "./modules/iam-role"
 # }
+
+# module "aws_s3_bucket" {
+#   source = "./modules/web-hosting-bucket"
+
+# }

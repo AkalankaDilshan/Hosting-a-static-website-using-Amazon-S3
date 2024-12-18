@@ -28,8 +28,12 @@ variable "error_document" {
   default     = "error.html"
 }
 
-variable "html_source_dir" {
+variable "index_html_source_dir" {
   description = "Directory containing the HTML source files"
   type        = string
 }
 
+variable "error_html_source_dir" {
+  description = "Directory containing the HTML source files"
+  type        = string
+}

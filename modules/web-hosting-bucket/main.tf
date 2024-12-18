@@ -34,3 +34,17 @@ resource "aws_s3_bucket_public_access_block" "web_hosting_bucket_access" {
   restrict_public_buckets = true
 }
 
+resource "aws_s3_object" "index_page" {
+  bucket       = aws_s3_bucket.web_hosting_bucket.id
+  key          = var.index_document
+  source       = var.index_html_source_dir
+  content_type = "text/html"
+}
+
+resource "aws_s3_object" "error_page" {
+  bucket       = aws_s3_bucket.web_hosting_bucket.id
+  key          = var.error_document
+  source       = var.error_html_source_dir
+  content_type = "text/html"
+}
+
