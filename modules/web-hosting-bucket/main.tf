@@ -14,21 +14,26 @@ resource "aws_s3_bucket" "web_hosting_bucket" {
 
 }
 
-resource "aws_s3_bucket_policy" "allow_public_access" {
-  bucket = aws_s3_bucket.web_hosting_bucket.id
+data "aws_iam_policy_document" "s3_policy" {
+  statement {
+    sid       = "PublicReadGetObject"
+    effect    = "allow"
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.web_hosting_bucket.arn}/*"]
 
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect    = "Allow"
-        Principal = "*"
-        Action    = "s3:GetObject"
-        Resource  = "${aws_s3_bucket.web_hosting_bucket.arn}/*"
-      }
-    ]
-  })
+    principals {
+      type = "AWS"
+      # identifiers = [var.oai_arn]
+      identifiers = ["*"]
+    }
+  }
 }
+
+resource "aws_s3_bucket_policy" "bucket_policy" {
+  bucket = aws_s3_bucket.web_hosting_bucket.id
+  policy = data.aws_iam_policy_document.s3_policy.json
+}
+
 
 resource "aws_s3_bucket_website_configuration" "web_hosting_bucket_config" {
   bucket = aws_s3_bucket.web_hosting_bucket.id
