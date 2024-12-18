@@ -7,7 +7,6 @@ resource "aws_s3_bucket" "web_hosting_bucket" {
   bucket        = "${var.bucket_prefix}-${random_string.bucket_suffix.result}"
   force_destroy = true
 
-
   tags = {
     Name        = "web hosting bucket"
     Environment = var.environment
