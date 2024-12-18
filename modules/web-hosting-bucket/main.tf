@@ -1,7 +1,7 @@
 resource "random_string" "bucket_suffix" {
   length  = 6
   special = false
-  upper   = true
+  upper   = false
 }
 resource "aws_s3_bucket" "web_hosting_bucket" {
   bucket        = "${var.bucket_prefix}-${random_string.bucket_suffix.result}"
