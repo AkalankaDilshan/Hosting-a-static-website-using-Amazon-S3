@@ -14,3 +14,10 @@ module "aws_s3_bucket" {
   index_html_source_dir = "./res/index.html"
   error_html_source_dir = "./res/error.html"
 }
+
+module "cloudFront" {
+  source             = "./modules/cloudfront"
+  project_name       = "Hosting-a-static-website-using-Amazon-S3"
+  bucket_id          = module.aws_s3_bucket.bucket_id
+  bucket_domain_name = module.aws_s3_bucket.bucket_regional_domain_name
+}
