@@ -1,11 +1,14 @@
 data "aws_iam_policy_document" "s3_policy" {
   statement {
+    sid       = "PublicReadGetObject"
+    effect    = "allow"
     actions   = ["s3:GetObject"]
     resources = ["${var.bucket_arn}/*"]
 
     principals {
-      type        = "AWS"
-      identifiers = [var.oai_arn]
+      type = "AWS"
+      # identifiers = [var.oai_arn]
+      identifiers = ["*"]
     }
   }
 }

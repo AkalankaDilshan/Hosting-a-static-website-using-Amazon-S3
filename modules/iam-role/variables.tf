@@ -8,7 +8,7 @@ variable "bucket_arn" {
   type        = string
 }
 
-variable "oai_arn" {
-  description = "origin access identity arn"
-  type        = string
-}
+# variable "oai_arn" {
+#   description = "origin access identity arn"
+#   type        = string
+# }
