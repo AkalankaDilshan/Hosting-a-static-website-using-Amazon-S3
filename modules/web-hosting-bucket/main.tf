@@ -14,12 +14,12 @@ resource "aws_s3_bucket" "web_hosting_bucket" {
 
 }
 
-data "aws_iam_policy_document" "s3_policy" {
-  statement {
-    sid       = "PublicReadGetObject"
-    effect    = "Allow"
-    actions   = ["s3:GetObject"]
-    resources = ["${aws_s3_bucket.web_hosting_bucket.arn}/*"]
+# data "aws_iam_policy_document" "s3_policy" {
+#   statement {
+#     sid       = "PublicReadGetObject"
+#     effect    = "Allow"
+#     actions   = ["s3:GetObject"]
+#     resources = ["${aws_s3_bucket.web_hosting_bucket.arn}/*"]
 
     principals {
       type = "AWS"
