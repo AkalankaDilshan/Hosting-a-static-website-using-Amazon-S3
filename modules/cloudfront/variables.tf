@@ -26,3 +26,12 @@ variable "project_name" {
   default     = "terraform-aws-web-hosting"
 }
 
+variable "acm_certificate_arn" {
+  type        = string
+  description = "Custom SSL certificate"
+}
+
+variable "alternate_domain_name" {
+  type        = string
+  description = "Alternate domain name (CNAME)"
+}

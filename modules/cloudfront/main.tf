@@ -40,8 +40,11 @@ resource "aws_cloudfront_distribution" "cdn_distribution" {
       restriction_type = "none"
     }
   }
+
+  aliases = "$var.alternate_domain_name"
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn = var.acm_certificate_arn
+    ssl_support_method  = "sni-only"
   }
 
   tags = {
