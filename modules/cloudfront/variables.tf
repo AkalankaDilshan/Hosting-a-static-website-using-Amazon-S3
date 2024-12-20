@@ -26,3 +26,7 @@ variable "project_name" {
   default     = "terraform-aws-web-hosting"
 }
 
+variable "acm_certificate_arn" {
+  type        = string
+  description = "acm value"
+}

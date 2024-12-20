@@ -41,7 +41,7 @@ resource "aws_cloudfront_distribution" "cdn_distribution" {
     }
   }
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn = var.acm_certificate_arn
   }
 
   tags = {
