@@ -36,6 +36,11 @@ module "aws_route53" {
   hosted_zone_id                    = var.dns_hosted_zone_id
   cloudfront_distribution_name      = module.aws_cloudFront.cdn_domain_name
   cloudfront_distribution_hosted_id = module.aws_cloudFront.hosted_zone_id
-  acm_certificate_arn               = module.aws_acm_certificate.acm_certificate_arn
+  #acm_certificate_arn               = module.aws_acm_certificate.acm_certificate_arn
 }
 
+module "aws_acm_validation" {
+  source                  = "./modules/acm_validation"
+  acm_certificate_arn     = module.aws_acm_certificate.acm_certificate_arn
+  validation_record_fqdns = [for record in module.aws_route53.acm_validation : record.fqdn]
+}
