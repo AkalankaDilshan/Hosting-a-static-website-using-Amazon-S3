@@ -26,7 +26,7 @@ module "aws_cloudFront" {
   bucket_domain_name    = module.aws_s3_bucket.bucket_regional_domain_name
   alternate_domain_name = ["mywebsite.zerocloud.click"] # enter here your domain name
   acm_certificate_arn   = module.aws_acm_certificate.acm_certificate_arn
-  depended_module       = module.aws_acm_certificate.acm_certificate_arn
+  depended_module       = [module.aws_acm_certificate.acm_certificate_arn]
 }
 
 module "aws_route53" {
