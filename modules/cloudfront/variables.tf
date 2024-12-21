@@ -36,3 +36,7 @@ variable "acm_certificate_arn" {
   description = "acm value"
 }
 
+variable "depended_module" {
+  type        = string
+  description = "depended_module"
+}

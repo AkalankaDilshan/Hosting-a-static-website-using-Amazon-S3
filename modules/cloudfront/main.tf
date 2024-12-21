@@ -11,6 +11,8 @@ resource "aws_cloudfront_distribution" "cdn_distribution" {
       origin_access_identity = aws_cloudfront_origin_access_identity.oai.cloudfront_access_identity_path
     }
 
+
+
   }
 
   enabled             = true
@@ -49,6 +51,7 @@ resource "aws_cloudfront_distribution" "cdn_distribution" {
     ssl_support_method  = "sni-only"
   }
 
+  depends_on = [var.depended_module]
   tags = {
     Name        = "cloudFront CDN for ${var.project_name}"
     Environment = var.environment
