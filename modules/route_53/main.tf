@@ -1,6 +1,10 @@
+data "aws_acm_certificate" "acm_certificate" {
+  arn = var.certificate_arn
+}
+
 resource "aws_route53_record" "acm_validation" {
   #for_each = toset(aws_acm_certificate_validation.certificate_validation.domain_validation_options)
-  for_each = { for dvo in var.domain_validation_options : dvo.resource_record_name => dvo }
+  for_each = { for dvo in data.aws_acm_certificate.acm_certificate.domain_validation_options : dvo.resource_record_name => dvo }
 
   zone_id = var.hosted_zone_id
   name    = each.value.resource_record_name

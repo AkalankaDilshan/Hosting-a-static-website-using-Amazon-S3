@@ -30,3 +30,8 @@ variable "domain_validation_options" {
     resource_record_value = string
   }))
 }
+
+variable "certificate_arn" {
+  type        = string
+  description = "acm certificate_arn"
+}
