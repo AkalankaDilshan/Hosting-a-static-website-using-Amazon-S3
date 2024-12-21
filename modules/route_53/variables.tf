@@ -31,10 +31,10 @@ variable "domain_validation_options" {
   }))
 }
 
-variable "certificate_arn" {
-  type        = string
-  description = "acm certificate_arn"
-}
+# variable "certificate_arn" {
+#   type        = string
+#   description = "acm certificate_arn"
+# }
 
 variable "environment" {
   description = "environment for development"

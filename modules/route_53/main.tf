@@ -1,5 +1,6 @@
 data "aws_acm_certificate" "certificate" {
-  arn = var.certificate_arn
+  #arn = var.certificate_arn
+  domain = var.domain_name
   tags = {
     Environment = var.environment
   }
