@@ -33,7 +33,7 @@ module "aws_cloudFront" {
 module "aws_acm_validation" {
   source                  = "./modules/acm_validation"
   acm_certificate_arn     = module.aws_acm_certificate.acm_certificate_arn
-  validation_record_fqdns = [for record in module.aws_acm_certificate.validation_record_fqdns : record.fqdn]
+  validation_record_fqdns = module.aws_route53.record_fqdns
 }
 module "aws_route53" {
   source                            = "./modules/route_53"
