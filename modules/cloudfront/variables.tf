@@ -6,7 +6,7 @@ variable "bucket_id" {
 variable "alternate_domain_name" {
   type        = list(string)
   description = "Alternate domain name"
-  default     = []
+
 }
 variable "bucket_domain_name" {
   description = "hosting bucket doamin name"

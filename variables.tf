@@ -13,7 +13,7 @@ variable "acm_certificate_domain_name" {
   description = "domain nae to certificated SSL"
 }
 
-variable "cloudfront_alternate_domain_name" {
-  type        = list(string)
-  description = "cloudfront alias domain name"
-}
+# variable "cloudfront_alternate_domain_name" {
+#   type        = list(string)
+#   description = "cloudfront alias domain name"
+# }
