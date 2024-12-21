@@ -17,3 +17,9 @@ variable "acm_certificate_domain_name" {
 #   type        = list(string)
 #   description = "cloudfront alias domain name"
 # }
+
+variable "environment" {
+  description = "environment for development"
+  type        = string
+  default     = "development"
+}
