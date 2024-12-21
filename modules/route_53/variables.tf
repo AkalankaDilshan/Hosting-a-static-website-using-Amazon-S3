@@ -17,3 +17,8 @@ variable "cloudfront_distribution_name" {
   type        = string
   description = "the cloudfront distribition name to map the domain"
 }
+
+variable "acm_certificate_arn" {
+  type        = string
+  description = "aws acm certificate arn"
+}
