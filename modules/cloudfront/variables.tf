@@ -30,3 +30,8 @@ variable "acm_certificate_arn" {
   type        = string
   description = "acm value"
 }
+
+variable "alternate_domain_name" {
+  type        = string
+  description = "alias domain name"
+}
