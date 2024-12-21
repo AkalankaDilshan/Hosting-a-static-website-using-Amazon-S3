@@ -1,5 +1,8 @@
 data "aws_acm_certificate" "certificate" {
   arn = var.certificate_arn
+  tags = {
+    Environment = var.environment
+  }
 }
 
 resource "aws_route53_record" "acm_validation" {

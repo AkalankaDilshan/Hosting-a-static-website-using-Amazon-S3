@@ -35,3 +35,9 @@ variable "certificate_arn" {
   type        = string
   description = "acm certificate_arn"
 }
+
+variable "environment" {
+  description = "environment for development"
+  type        = string
+  default     = "development"
+}
