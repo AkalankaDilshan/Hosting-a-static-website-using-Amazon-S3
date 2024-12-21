@@ -4,5 +4,5 @@ output "route53_url" {
 }
 
 output "record_fqdns" {
-  value = [for record in aws_aws_route53_record.acm_validation : record.fqdn]
+  value = [for record in aws_route53_record.acm_validation : record.fqdn]
 }
