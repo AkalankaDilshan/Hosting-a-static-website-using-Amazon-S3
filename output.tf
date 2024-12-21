@@ -7,3 +7,8 @@ output "cloudfront_url" {
   value       = module.cloudFront.cdn_domain_name
   description = "the URL of cloudfront"
 }
+
+output "route53_url" {
+  value       = module.aws_route53.route53_url
+  description = "the domain name for the Route 53 record"
+}
