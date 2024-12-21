@@ -37,6 +37,6 @@ variable "acm_certificate_arn" {
 }
 
 variable "depended_module" {
-  type        = string
+  type        = list(string)
   description = "depended_module"
 }
