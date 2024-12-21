@@ -10,6 +10,7 @@ resource "aws_cloudfront_distribution" "cdn_distribution" {
     s3_origin_config {
       origin_access_identity = aws_cloudfront_origin_access_identity.oai.cloudfront_access_identity_path
     }
+
   }
 
   enabled             = true
@@ -41,7 +42,8 @@ resource "aws_cloudfront_distribution" "cdn_distribution" {
     }
   }
 
-  aliases = "$var.alternate_domain_name"
+
+  aliases = var.alternate_domain_name
   viewer_certificate {
     acm_certificate_arn = var.acm_certificate_arn
     ssl_support_method  = "sni-only"

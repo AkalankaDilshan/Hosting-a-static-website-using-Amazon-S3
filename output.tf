@@ -4,7 +4,7 @@ output "bucket_website_endpoint" {
 }
 
 output "cloudfront_url" {
-  value       = module.cloudFront.cdn_domain_name
+  value       = module.aws_cloudFront.cdn_domain_name
   description = "the URL of cloudfront"
 }
 

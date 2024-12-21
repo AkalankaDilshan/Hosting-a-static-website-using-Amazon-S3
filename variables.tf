@@ -14,6 +14,6 @@ variable "acm_certificate_domain_name" {
 }
 
 variable "cloudfront_alternate_domain_name" {
-  type        = string
+  type        = list(string)
   description = "cloudfront alias domain name"
 }

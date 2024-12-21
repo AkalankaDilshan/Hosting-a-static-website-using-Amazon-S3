@@ -3,6 +3,11 @@ variable "bucket_id" {
   type        = string
 }
 
+variable "alternate_domain_name" {
+  type        = list(string)
+  description = "Alternate domain name"
+  default     = []
+}
 variable "bucket_domain_name" {
   description = "hosting bucket doamin name"
   type        = string
@@ -31,7 +36,3 @@ variable "acm_certificate_arn" {
   description = "acm value"
 }
 
-variable "alternate_domain_name" {
-  type        = string
-  description = "alias domain name"
-}
