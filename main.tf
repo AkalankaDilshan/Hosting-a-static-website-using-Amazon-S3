@@ -45,7 +45,7 @@ module "aws_route53" {
   domain_validation_options = module.aws_acm_certificate.domain_validation_options
   #domain_validation_options         = module.aws_acm_validation.certificate_validation.domain_validation_options
   #domain_validation_options =  module.aws_acm_certificate_validation.certificate_validation.domain_validation_options
-  #acm_certificate_arn               = module.aws_acm_certificate.acm_certificate_arn
+  #acm_certificate_arn = module.aws_acm_certificate.acm_certificate_arn
 }
 
 

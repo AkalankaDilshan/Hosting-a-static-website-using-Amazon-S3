@@ -42,6 +42,6 @@ variable "environment" {
   default     = "development"
 }
 
-variable "acm_certificate" {
-  type = string
-}
+# variable "acm_certificate" {
+#   type = string
+# }
