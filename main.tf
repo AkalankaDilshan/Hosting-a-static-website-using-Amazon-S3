@@ -30,11 +30,11 @@ module "aws_cloudFront" {
   # depended_module       = [module.aws_acm_certificate.acm_certificate_arn]
 }
 
-module "aws_acm_validation" {
-  source                  = "./modules/acm_validation"
-  acm_certificate_arn     = module.aws_acm_certificate.acm_certificate_arn
-  validation_record_fqdns = module.aws_route53.record_fqdns
-}
+# module "aws_acm_validation" {
+#   source                  = "./modules/acm_validation"
+#   acm_certificate_arn     = module.aws_acm_certificate.acm_certificate_arn
+#   validation_record_fqdns = module.aws_route53.record_fqdns
+# }
 module "aws_route53" {
   source                            = "./modules/route_53"
   domain_name                       = var.dns_domain_name
