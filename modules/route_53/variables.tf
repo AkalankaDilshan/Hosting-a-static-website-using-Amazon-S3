@@ -23,13 +23,13 @@ variable "cloudfront_distribution_name" {
 #   description = "aws acm certificate arn"
 # }
 
-variable "domain_validation_options" {
-  type = list(object({
-    resource_record_name  = string
-    resource_record_type  = string
-    resource_record_value = string
-  }))
-}
+# variable "domain_validation_options" {
+#   type = list(object({
+#     resource_record_name  = string
+#     resource_record_type  = string
+#     resource_record_value = string
+#   }))
+# }
 
 # variable "certificate_arn" {
 #   type        = string
