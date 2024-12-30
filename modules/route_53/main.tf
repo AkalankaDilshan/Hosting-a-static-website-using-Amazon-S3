@@ -7,14 +7,22 @@ data "aws_acm_certificate" "certificate" {
 }
 
 resource "aws_route53_record" "acm_validation" {
-  #for_each = toset(aws_acm_certificate_validation.certificate_validation.domain_validation_options)
-  for_each = { for dvo in data.aws_acm_certificate.certificate.domain_validation_options : dvo.resource_record_name => dvo }
+  for_each = toset(aws_acm_certificate_validation.certificate_validation.domain_validation_options)
+  #for_each = { for dvo in data.aws_acm_certificate.certificate.domain_validation_options : dvo.resource_record_name => dvo }
 
-  zone_id = var.hosted_zone_id
-  name    = each.value.resource_record_name
-  type    = each.value.resource_record_type
-  records = [each.value.resource_record_value]
-  ttl     = 300
+  # for_each = {
+  #    for dvo in aws_acm_certificate.certificate.domain_validation_options : dvo.domain_name = > {
+  #     name   = dvo.resource_record_name
+  #     record = dvo.resource_record_value
+  #     type   = dvo.resource_record_type
+  #    }
+  # }
+  allow_overwrite = true
+  zone_id         = var.hosted_zone_id
+  name            = each.value.resource_record_name
+  type            = each.value.resource_record_type
+  records         = [each.value.resource_record_value]
+  ttl             = 300
 }
 
 resource "aws_route53_record" "cloudfront_alias" {

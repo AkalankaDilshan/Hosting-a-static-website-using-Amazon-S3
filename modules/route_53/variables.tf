@@ -41,3 +41,7 @@ variable "environment" {
   type        = string
   default     = "development"
 }
+
+variable "acm_certificate" {
+  type = string
+}
