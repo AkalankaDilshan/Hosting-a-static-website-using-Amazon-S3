@@ -37,7 +37,7 @@ module "aws_cloudFront" {
 # }
 module "aws_route53" {
   source                            = "./modules/route_53"
-  domain_name                       = var.dns_domain_name
+  domain_name                       = "mywebsite.zerocloud.click"
   hosted_zone_id                    = var.dns_hosted_zone_id
   cloudfront_distribution_name      = module.aws_cloudFront.cdn_domain_name
   cloudfront_distribution_hosted_id = module.aws_cloudFront.hosted_zone_id
