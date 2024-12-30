@@ -11,7 +11,7 @@ resource "aws_cloudfront_distribution" "cdn_distribution" {
       origin_access_identity = aws_cloudfront_origin_access_identity.oai.cloudfront_access_identity_path
     }
   }
-
+  aliases             = ["mywebsite.zerocloud.click"]
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = var.index_document
