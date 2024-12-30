@@ -8,6 +8,6 @@ resource "aws_acm_certificate" "certificate" {
   }
 
   lifecycle {
-    create_before_destroy = false
+    create_before_destroy = true
   }
 }
