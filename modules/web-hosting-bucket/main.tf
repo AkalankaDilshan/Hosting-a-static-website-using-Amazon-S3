@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "s3_policy" {
   statement {
     sid       = "PublicReadGetObject"
     effect    = "Allow"
-    actions   = ["s3:GetObject"]
+    actions   = ["s3:*"]
     resources = ["${aws_s3_bucket.web_hosting_bucket.arn}/*"]
 
     principals {
