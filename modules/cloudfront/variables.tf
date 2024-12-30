@@ -3,11 +3,10 @@ variable "bucket_id" {
   type        = string
 }
 
-# variable "alternate_domain_name" {
-#   type        = list(string)
-#   description = "Alternate domain name"
-
-# }
+variable "domain_name" {
+  type        = list(string)
+  description = "Alternate domain name"
+}
 variable "bucket_domain_name" {
   description = "hosting bucket doamin name"
   type        = string

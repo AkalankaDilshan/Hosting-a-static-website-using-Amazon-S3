@@ -81,7 +81,7 @@ resource "aws_route53_record" "cloudfront_alias" {
   name    = var.domain_name
   type    = "A"
   alias {
-    name                   = "mywebsite.zerocloud.click"
+    name                   = var.cloudfront_distribution_name
     zone_id                = var.cloudfront_distribution_hosted_id
     evaluate_target_health = false
   }

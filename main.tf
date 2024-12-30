@@ -21,11 +21,11 @@ module "aws_s3_bucket" {
 # }
 
 module "aws_cloudFront" {
-  source             = "./modules/cloudfront"
-  project_name       = "Hosting-a-static-website-using-Amazon-S3"
-  bucket_id          = module.aws_s3_bucket.bucket_id
-  bucket_domain_name = module.aws_s3_bucket.bucket_regional_domain_name
-  # alternate_domain_name = ["mywebsite.zerocloud.click"] # enter here your domain name
+  source              = "./modules/cloudfront"
+  project_name        = "Hosting-a-static-website-using-Amazon-S3"
+  bucket_id           = module.aws_s3_bucket.bucket_id
+  bucket_domain_name  = module.aws_s3_bucket.bucket_regional_domain_name
+  domain_name         = ["mywebsite.zerocloud.click"] # enter here your domain name
   acm_certificate_arn = module.aws_route53.acm_certificate_arn
   # depended_module       = [module.aws_acm_certificate.acm_certificate_arn]
 }
