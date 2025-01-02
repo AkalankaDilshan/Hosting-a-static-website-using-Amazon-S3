@@ -38,7 +38,17 @@ variable "error_html_source_dir" {
   type        = string
 }
 
-variable "oai_arn" {
+# variable "oai_arn" {
+#   type        = string
+#   description = "aws_cloudfront_origin_access_identity.oai.iam_arn"
+# }
+
+variable "cloudfront_account_id" {
   type        = string
-  description = "aws_cloudfront_origin_access_identity.oai.iam_arn"
+  description = "for s3 permission"
+}
+
+variable "cloudfront_distribution_id" {
+  type        = string
+  description = "for s3 permission"
 }

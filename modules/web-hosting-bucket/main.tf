@@ -26,15 +26,20 @@ resource "aws_s3_bucket_public_access_block" "web_hosting_bucket_access" {
 
 data "aws_iam_policy_document" "s3_policy" {
   statement {
-    sid       = "PublicReadGetObject"
+    sid       = "AllowCloudFrontServicePrincipalRead"
     effect    = "Allow"
-    actions   = ["s3:GetObject", "s3:"]
+    actions   = ["s3:GetObject"]
     resources = ["${aws_s3_bucket.web_hosting_bucket.arn}/*"]
 
     principals {
-      type = "AWS"
-      # identifiers = [var.oai_arn]
-      identifiers = [var.oai_arn]
+      type        = "Service"
+      identifiers = ["cloudfront.amazonaws.com"]
+    }
+
+    condition {
+      test     = "StringEquals"
+      variable = "AWS:SourceArn"
+      values   = ["arn:aws:cloudfront::${var.cloudfront_account_id}:distribution/${var.cloudfront_distribution_id}"]
     }
   }
 }
