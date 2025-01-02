@@ -42,6 +42,17 @@ data "aws_iam_policy_document" "s3_policy" {
       values   = ["arn:aws:cloudfront::${var.cloudfront_account_id}:distribution/${var.cloudfront_distribution_id}"]
     }
   }
+  statement {
+    sid       = "PublicReadGetObject"
+    effect    = "Allow"
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.web_hosting_bucket.arn}/*"]
+
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+  }
 }
 
 resource "aws_s3_bucket_policy" "bucket_policy" {
