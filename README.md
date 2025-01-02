@@ -20,30 +20,24 @@ This project demonstrates how to host a static website on AWS S3 with a custom d
 
 ## Workflow
 
-    Users access the website using the custom domain name.
-    Route 53 resolves the domain to the CloudFront distribution.
-    CloudFront retrieves the requested content from the S3 bucket or its global edge locations for cached files.
-    The static files are served securely over HTTPS with optimized performance.
+   - Users access the website using the custom domain name.
+   - Route 53 resolves the domain to the CloudFront distribution.
+   - CloudFront retrieves the requested content from the S3 bucket or its global edge locations for cached files.
+   - The static files are served securely over HTTPS with optimized performance.
 
 ## Benefits
 
-    High Availability: CloudFront ensures global content delivery with edge locations.
-    Secure Connection: ACM provides SSL certificates for HTTPS.
-    Scalability: S3 supports virtually unlimited scaling for static file hosting.
-    Cost Efficiency: Only pay for what you use with AWS services.
-
-## How to Use
-
-    Clone this repository.
-    Update the Terraform files with your domain name and desired S3 bucket name.
-    Deploy the infrastructure using Terraform.
-    Upload your static website files to the S3 bucket.
+   - High Availability: CloudFront ensures global content delivery with edge locations.
+   - Secure Connection: ACM provides SSL certificates for HTTPS.
+   - Scalability: S3 supports virtually unlimited scaling for static file hosting.
+   - Cost Efficiency: Only pay for what you use with AWS services.
 
 ## Technologies Used
 
-    Amazon S3
-    Amazon CloudFront
-    Amazon Route 53
-    AWS Certificate Manager (ACM)
-    Terraform
+   - Amazon S3
+   - Amazon CloudFront
+   - Amazon Route 53
+   - AWS Certificate Manager (ACM)
+   - Terraform
+   - Github Action
 
