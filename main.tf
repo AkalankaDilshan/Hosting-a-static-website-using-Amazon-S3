@@ -13,6 +13,7 @@ module "aws_s3_bucket" {
   source                = "./modules/web-hosting-bucket"
   index_html_source_dir = "./res/index.html"
   error_html_source_dir = "./res/error.html"
+  oai_arn               = module.aws_cloudFront.oai_arn
 }
 
 # module "aws_acm_certificate" {

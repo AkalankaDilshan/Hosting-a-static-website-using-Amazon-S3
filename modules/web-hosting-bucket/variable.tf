@@ -37,3 +37,8 @@ variable "error_html_source_dir" {
   description = "Directory containing the HTML source files"
   type        = string
 }
+
+variable "oai_arn" {
+  type        = string
+  description = "aws_cloudfront_origin_access_identity.oai.iam_arn"
+}

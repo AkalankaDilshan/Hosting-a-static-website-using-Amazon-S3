@@ -6,3 +6,7 @@ output "cdn_domain_name" {
 output "hosted_zone_id" {
   value = aws_cloudfront_distribution.cdn_distribution.hosted_zone_id
 }
+
+output "oai_arn" {
+  value = aws_cloudfront_origin_access_identity.oai.iam_arn
+}
