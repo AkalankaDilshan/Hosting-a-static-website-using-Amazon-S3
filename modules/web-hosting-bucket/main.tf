@@ -18,7 +18,7 @@ resource "aws_s3_bucket_public_access_block" "web_hosting_bucket_access" {
   bucket = aws_s3_bucket.web_hosting_bucket.id
 
   block_public_acls       = false
-  block_public_policy     = false
+  block_public_policy     = true
   ignore_public_acls      = false
   restrict_public_buckets = false
 }
@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "s3_policy" {
   statement {
     sid       = "PublicReadGetObject"
     effect    = "Allow"
-    actions   = ["s3:*"]
+    actions   = ["s3:GetObject"]
     resources = ["${aws_s3_bucket.web_hosting_bucket.arn}/*"]
 
     principals {
