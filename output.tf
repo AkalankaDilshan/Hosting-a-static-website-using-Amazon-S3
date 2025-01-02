@@ -9,6 +9,6 @@ output "cloudfront_url" {
 }
 
 output "route53_url" {
-  value       = module.aws_route53.route53_url
+  value       = "mywebsite.zerocloud.click"
   description = "the domain name for the Route 53 record"
 }
