@@ -1,6 +1,6 @@
 # Static Website Hosting on AWS with CloudFront and Route 53
 This project demonstrates how to host a static website on AWS S3 with a custom domain, leveraging CloudFront for Content Delivery Network (CDN) optimization, Route 53 for DNS routing, and AWS Certificate Manager (ACM) for secure HTTPS access.
-![architecture](https://github.com/user-attachments/assets/a0ecdefc-8869-45cf-a088-4335f884df5e)
+![architecture](https://github.com/user-attachments/assets/30380ca8-64ce-4af0-b14d-f75ba45f453d)
 
 ## Architecture Components
 
